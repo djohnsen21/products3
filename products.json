@@ -1,0 +1,52 @@
+{
+  "products": [
+    {
+      "name": "Vintage T-shirt",
+      "description": "Tie-dye Grateful Dead T-shirt",
+      "price": 35,
+      "categories": ["clothing", "vintage"]
+    },
+    {
+      "name": "Running Shoes",
+      "description": "Lightweight and durable running shoes",
+      "price": 80,
+      "categories": ["footwear"]
+    },
+    {
+      "name": "Leather Wallet",
+      "description": "Handcrafted leather wallet",
+      "price": 50,
+      "categories": ["accessories"]
+    },
+    {
+      "name": "Smartphone Stand",
+      "description": "Adjustable plastic smartphone stand",
+      "price": 20,
+      "categories": ["electronics"]
+    },
+    {
+      "name": "Wireless Headphones",
+      "description": "Noise-canceling bluetooth headphones",
+      "price": 120,
+      "categories": ["electronics"]
+    },
+    {
+      "name": "Cookware Set",
+      "description": "Non-stick full cookware set",
+      "price": 100,
+      "categories": ["home"]
+    },
+    {
+      "name": "Backpack",
+      "description": "All-terrain hiking backpack",
+      "price": 60,
+      "categories": ["accessories", "outdoors"]
+    },
+    {
+      "name": "Desk Lamp",
+      "description": "Desk lamp with adjustable brightness",
+      "price": 30,
+      "categories": ["home"]
+    }
+  ]
+}
