@@ -1,0 +1,69 @@
+<html>
+<head>
+    <title>Filter Products by Category</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .product {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px 0;
+            background-color: #f9f9f9;
+        }
+        .product h2 {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Filter Products by Category</h1>
+
+    <label for="categorySelect">Select Category:</label>
+    <select id="categorySelect">
+        <option value="all">All Categories</option>
+    </select>
+    
+    <button id="filterBtn">Filter</button>
+
+    <div id="result"></div>
+
+    <script>
+        
+        $(document).ready(function(){
+
+            $.get("products.json", function(data) {
+                let allProducts = data.products;
+
+
+                let categories = new Set();
+                allProducts.forEach(product => {
+                    product.categories.forEach(cat => categories.add(cat));
+                });
+
+                categories.forEach(cat => {
+                    $("#categorySelect").append(`<option value="${cat}">${cat}</option>`);
+                });
+
+                $("#filterBtn").click(function(){
+                    let selectedCategory = $("#categorySelect").val();
+                    let output = "";
+
+                    allProducts.forEach(product => {
+                        if (selectedCategory === "all" || product.categories.includes(selectedCategory)) {
+                            output += `<p>${product.name}</p>`;
+                        }
+                    });
+
+                    document.getElementById("result").innerHTML = output;
+
+                });
+            });
+        });
+
+    </script>
+
+</body>
+</html>
